@@ -8,6 +8,10 @@ let songFiles = glob
   .sync("docs/songs/**/*.md")
   .map((f) => f.replace("docs", "").replace("index.md", ""));
 
+let articleFiles = glob
+  .sync("docs/articles/**/*.md")
+  .map((f) => f.replace("docs", "").replace("index.md", ""));
+
 import { description } from "../../package.json";
 
 const __dirname = getDirname(import.meta.url);
