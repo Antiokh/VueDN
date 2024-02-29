@@ -37,6 +37,11 @@ export default defineUserConfig({
     notFound: ["There's nothing here. If you're looking for DecapCMS, manually enter `/admin` to the root site path to navigate directly to it."],
     navbar: [
       {
+        text: "Articles",
+        // notice the trailing / (for the automatic next and prev links based on the sidebar)
+        link: "/articles/",
+      },
+      {
         text: "Songs",
         // notice the trailing / (for the automatic next and prev links based on the sidebar)
         link: "/songs/",
@@ -53,6 +58,12 @@ export default defineUserConfig({
     // notice there's a difference between /songs and /songs/
     // We have the /songs to enable this sidebar for /songs and /songs/ paths
     sidebar: {
+      "/articles": [
+        {
+          text: "Articles",
+          children: articleFiles,
+        },
+      ],
       "/songs": [
         {
           text: "Songs",
